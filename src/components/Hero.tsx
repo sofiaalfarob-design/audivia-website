@@ -1,0 +1,87 @@
+'use client';
+import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+
+export default function Hero() {
+  const { ref: leftRef, isVisible: leftVisible } = useScrollAnimation(0.05);
+  const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation(0.05);
+
+  return (
+    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden pt-20" style={{ background: 'linear-gradient(224.05deg, #FAFBFD 17.28%, #EFF1F6 81.03%)' }}>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+        {/* Left */}
+        <div
+          ref={leftRef}
+          className={`fade-left ${leftVisible ? 'visible' : ''}`}
+        >
+          <p className="text-[#E8541A] text-xs font-semibold uppercase tracking-widest mb-5">
+            Clínica de Audiología en Ciudad Quesada&nbsp;|&nbsp;Audivia – Karol Vega
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-[#1B3A6B] leading-tight mb-6">
+            Recupera tu audición<br />con la audióloga<br />
+            <span className="text-[#1B3A6B]">Karol Vega</span>
+          </h1>
+          <p className="text-gray-500 text-base md:text-lg mb-3 leading-relaxed">
+            Vuelve a ser parte de cada conversación con evaluaciones profesionales, limpieza de oídos y tecnología auditiva de vanguardia en San Carlos.
+          </p>
+          <p className="text-gray-500 text-base md:text-lg mb-8 leading-relaxed">
+            En Audivia, transformamos el silencio y la confusión en sonidos nítidos mediante un acompañamiento humano que entiende tu proceso desde el primer día.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://wa.me/50686154830"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-orange flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
+            >
+              <PhoneIcon />
+              Agendar mi Evaluación Auditiva
+            </a>
+            <a
+              href="https://wa.me/50686154830"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 border-2 border-[#1B3A6B] text-[#1B3A6B] px-7 py-4 rounded-full font-semibold text-sm hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
+            >
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        {/* Right – Doctor image */}
+        <div
+          ref={rightRef}
+          className={`fade-right ${rightVisible ? 'visible' : ''} flex justify-center relative`}
+        >
+          <div className="relative">
+            {/* Orange circle */}
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[460px] lg:h-[460px] bg-[#E8541A] rounded-full overflow-hidden">
+              <Image
+                src="/image-hero.png"
+                alt="Dra. Karol Vega - Audióloga"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+
+            {/* Experience badge */}
+            <div className="badge-float absolute bottom-8 -right-4 sm:right-0 lg:-right-6 bg-white rounded-2xl shadow-xl px-5 py-4 text-center border border-gray-100">
+              <p className="text-2xl lg:text-3xl font-extrabold text-[#1B3A6B]">+ 5 años</p>
+              <p className="text-gray-500 text-sm font-medium">de experiencia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+  );
+}
