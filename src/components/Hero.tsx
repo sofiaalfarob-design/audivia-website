@@ -42,7 +42,7 @@ export default function Hero() {
               href="https://wa.me/50686154823?text=Hola%20Karol%2C%20tengo%20algunas%20dudas%20sobre%20los%20servicios%20de%20Audivia%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 border-2 border-[#1B3A6B] text-[#1B3A6B] px-7 py-4 rounded-full font-semibold text-sm hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
+              className="btn-navy w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-sm"
             >
               Consultar por WhatsApp
             </a>

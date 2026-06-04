@@ -2,15 +2,15 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-const navLinks = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#proceso', label: 'Proceso' },
-  { href: '#nosotros', label: 'Nosotros' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#contacto', label: 'Contacto' },
+const NAV_ANCHORS = [
+  { anchor: '#servicios', label: 'Servicios' },
+  { anchor: '#proceso',   label: 'Proceso' },
+  { anchor: '#nosotros',  label: 'Nosotros' },
+  { anchor: '#faq',       label: 'FAQ' },
+  { anchor: '#contacto',  label: 'Contacto' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ prefix = '' }: { prefix?: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#inicio" className="flex-shrink-0">
+          <a href={`${prefix}#inicio`} className="flex-shrink-0">
             <Image
               src="/Logo-audivia.png"
               alt="Audivia - Audiología Karol Vega"
@@ -43,10 +43,10 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {NAV_ANCHORS.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.anchor}
+                href={`${prefix}${link.anchor}`}
                 className="text-[#1B3A6B] font-medium text-sm hover:text-[#E8541A] transition-colors duration-200"
               >
                 {link.label}
@@ -83,10 +83,10 @@ export default function Navbar() {
         }`}
       >
         <div className="px-4 py-4 space-y-3">
-          {navLinks.map((link) => (
+          {NAV_ANCHORS.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.anchor}
+              href={`${prefix}${link.anchor}`}
               onClick={handleLinkClick}
               className="block py-3.5 text-[#1B3A6B] font-medium hover:text-[#E8541A] transition-colors"
             >

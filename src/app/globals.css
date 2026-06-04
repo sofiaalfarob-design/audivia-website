@@ -66,13 +66,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Orange button ── */
 .btn-orange {
-  background: linear-gradient(135deg, #E8541A, #f06b2e);
-  transition: all 0.3s ease;
+  background: #E8541A;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-orange:hover {
-  background: linear-gradient(135deg, #cf4812, #E8541A);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(232, 84, 26, 0.45);
+  background: #C54716;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(232, 84, 26, 0.22);
+}
+
+/* ── Navy outline button ── */
+.btn-navy {
+  background: transparent;
+  border: 2px solid #1B3A6B;
+  color: #1B3A6B;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-navy:hover {
+  background: #1B3A6B;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(27, 58, 107, 0.22);
 }
 
 /* ── Service card hover ── */

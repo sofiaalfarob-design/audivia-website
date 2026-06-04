@@ -86,7 +86,7 @@ export default function Services() {
                 href={service.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto border-2 border-[#1B3A6B] text-[#1B3A6B] text-sm font-semibold py-2.5 rounded-full text-center hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
+                className="btn-navy mt-auto text-sm font-semibold py-2.5 rounded-full text-center"
               >
                 Consulta por el servicio
               </a>

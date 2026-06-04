@@ -46,37 +46,71 @@ export default function About() {
           </p>
 
           <a
-            href="https://wa.me/50686154823?text=Hola%2C%20vi%20la%20informaci%C3%B3n%20de%20Audivia%20y%20me%20gustar%C3%ADa%20consultar%20con%20la%20Dra.%20Karol%20Vega.%20%C2%BFCu%C3%A1l%20es%20el%20siguiente%20paso%3F"
+            href="https://maps.google.com/?q=Frente+al+Hospital+San+Carlos+Ciudad+Quesada+Edificio+Amore+Consultorio+3"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-orange w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
           >
             <WhatsAppIcon />
-            Consultar por WhatsApp
+            Visita nuestra clínica
           </a>
         </div>
 
         {/* Right – Clinic photo */}
         <div ref={rightRef} className={`fade-right ${rightVisible ? 'visible' : ''} relative w-full`}>
-          {/* Contenedor con sombra directo sobre la imagen */}
-          <div className="relative rounded-3xl overflow-hidden w-full">
+          {/* Contenedor – hover muestra mapa, clic abre Google Maps */}
+          <a
+            href="https://maps.google.com/?q=Frente+al+Hospital+San+Carlos+Ciudad+Quesada+Edificio+Amore+Consultorio+3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative rounded-3xl overflow-hidden w-full block group cursor-pointer"
+          >
+            {/* Imagen – se desvanece en hover */}
             <Image
               src="/image-section-5.png"
               alt="Clínica Audivia - Ciudad Quesada"
               width={700}
               height={500}
-              className="w-full h-auto block"
+              className="w-full h-auto block transition-opacity duration-500 group-hover:opacity-0"
             />
-            {/* Badge superpuesto arriba-izquierda DENTRO de la imagen */}
-            <div className="badge-float absolute top-5 left-5 bg-white border-2 border-[#E8541A] rounded-2xl shadow-lg px-5 py-3 text-center">
+
+            {/* Mapa incrustado – aparece en hover (solo visual, sin interacción) */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <iframe
+                src="https://maps.google.com/maps?q=Frente+Emergencias+Hospital+San+Carlos+Ciudad+Quesada+Costa+Rica&output=embed&z=17&hl=es"
+                className="w-full h-full border-0 pointer-events-none"
+                title="Ubicación Clínica Audivia"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Badge "Conoce nuestra clínica" – se oculta en hover */}
+            <div className="badge-float absolute top-5 left-5 bg-white border-2 border-[#E8541A] rounded-2xl shadow-lg px-5 py-3 text-center transition-opacity duration-300 group-hover:opacity-0">
               <p className="text-[#1B3A6B] font-bold text-sm leading-snug">
                 Conoce nuestra<br />clínica
               </p>
             </div>
-          </div>
+
+            {/* Indicador – aparece en hover */}
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <span className="bg-white text-[#1B3A6B] text-xs font-semibold px-4 py-2 rounded-full shadow-lg whitespace-nowrap flex items-center gap-1.5">
+                <MapPinIcon />
+                Abrir en Google Maps
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
+  );
+}
+
+function MapPinIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
   );
 }
 
