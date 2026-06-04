@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -32,7 +33,7 @@ export default function Process() {
       {/* Gráfico de fondo – esquina superior derecha, sangra hacia Services, igual que Figma */}
       <div
         className="hidden md:flex absolute items-center justify-center pointer-events-none select-none opacity-30"
-        style={{ top: '-33%', right: '0', left: '79.69%', aspectRatio: '276 / 398.174', containerType: 'size' }}
+        style={{ '--float-dur': '13s', top: '-33%', right: '0', left: '79.69%', aspectRatio: '276 / 398.174', containerType: 'size' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
           <img src="/bg-services.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
@@ -68,10 +69,10 @@ export default function Process() {
             para asegurar que vuelvas a disfrutar de los sonidos que le dan sentido a tu vida.
           </p>
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%20Karol%2C%20me%20gustar%C3%ADa%20iniciar%20mi%20proceso%20de%20evaluaci%C3%B3n%20auditiva%20en%20Audivia.%20%C2%BFPodr%C3%ADa%20agendar%20una%20cita%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-orange inline-flex items-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
+            className="btn-orange w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
           >
             <PhoneIcon />
             Agendar mi Evaluación Auditiva

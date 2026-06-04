@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -11,7 +12,7 @@ export default function About() {
       {/* Gráfico de fondo – lado izquierdo, sangra hacia Process, igual que Figma */}
       <div
         className="hidden md:flex absolute items-center justify-center pointer-events-none select-none opacity-30"
-        style={{ top: '-24.52%', right: '80.06%', left: '-0.88%', aspectRatio: '283 / 674.805', containerType: 'size' }}
+        style={{ '--float-dur': '9s', top: '-24.52%', right: '80.06%', left: '-0.88%', aspectRatio: '283 / 674.805', containerType: 'size' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
           <img src="/bg-about.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
@@ -25,7 +26,7 @@ export default function About() {
             Sobre Nosotros
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1B3A6B] leading-tight mb-8">
-            El propósito detrás de la Profesión
+            El propósito detrás de la profesión
           </h2>
 
           {/* Quote block */}
@@ -45,10 +46,10 @@ export default function About() {
           </p>
 
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%2C%20vi%20la%20informaci%C3%B3n%20de%20Audivia%20y%20me%20gustar%C3%ADa%20consultar%20con%20la%20Dra.%20Karol%20Vega.%20%C2%BFCu%C3%A1l%20es%20el%20siguiente%20paso%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-orange inline-flex items-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
+            className="btn-orange w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
           >
             <WhatsAppIcon />
             Consultar por WhatsApp

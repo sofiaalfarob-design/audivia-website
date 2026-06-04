@@ -30,19 +30,19 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://wa.me/50686154830"
+              href="https://wa.me/50686154823?text=Hola%2C%20me%20interesa%20agendar%20una%20evaluaci%C3%B3n%20auditiva%20en%20Audivia.%20%C2%BFPodr%C3%ADa%20darme%20informaci%C3%B3n%20sobre%20disponibilidad%20y%20costo%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-orange flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
+              className="btn-orange w-full sm:w-auto flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
             >
               <PhoneIcon />
               Agendar mi Evaluación Auditiva
             </a>
             <a
-              href="https://wa.me/50686154830"
+              href="https://wa.me/50686154823?text=Hola%20Karol%2C%20tengo%20algunas%20dudas%20sobre%20los%20servicios%20de%20Audivia%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 border-2 border-[#1B3A6B] text-[#1B3A6B] px-7 py-4 rounded-full font-semibold text-sm hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 border-2 border-[#1B3A6B] text-[#1B3A6B] px-7 py-4 rounded-full font-semibold text-sm hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
             >
               Consultar por WhatsApp
             </a>

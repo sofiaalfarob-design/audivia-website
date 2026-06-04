@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Audivia – Audiología Karol Vega | Ciudad Quesada, San Carlos",
   description:
     "Clínica de audiología en Ciudad Quesada. Evaluaciones profesionales, limpieza de oídos y adaptación de audífonos de alta tecnología con la Dra. Karol Vega.",
+  icons: {
+    icon: "/icono-audivia.svg",
+  },
 };
 
 export default function RootLayout({

@@ -56,7 +56,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%20Karol%2C%20quisiera%20agendar%20una%20cita%20en%20Audivia.%20%C2%BFCu%C3%A1l%20es%20su%20disponibilidad%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex items-center gap-2 btn-orange text-white px-6 py-3 rounded-full font-semibold text-sm"
@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-[#1B3A6B] focus:outline-none"
+            className="md:hidden p-3 text-[#1B3A6B] focus:outline-none"
             aria-label="Abrir menú"
           >
             {isOpen ? <XIcon /> : <MenuIcon />}
@@ -88,13 +88,13 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={handleLinkClick}
-              className="block py-2 text-[#1B3A6B] font-medium hover:text-[#E8541A] transition-colors"
+              className="block py-3.5 text-[#1B3A6B] font-medium hover:text-[#E8541A] transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%20Karol%2C%20quisiera%20agendar%20una%20cita%20en%20Audivia.%20%C2%BFCu%C3%A1l%20es%20su%20disponibilidad%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 btn-orange text-white py-3 rounded-full font-semibold mt-2"

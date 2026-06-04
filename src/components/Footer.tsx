@@ -25,10 +25,10 @@ export default function Footer() {
               Escuchar bien también es calidad de vida
             </p>
             <a
-              href="https://wa.me/50686154830"
+              href="https://wa.me/50686154823?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20servicios%20de%20Audivia.%20%C2%BFMe%20pueden%20ayudar%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-orange inline-block text-white px-6 py-3 rounded-full font-semibold text-sm"
+              className="btn-orange block sm:inline-block w-full sm:w-auto text-white px-6 py-3 rounded-full font-semibold text-sm text-center"
             >
               Contáctanos ahora
             </a>
@@ -68,8 +68,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <PhoneIcon />
-                <a href="tel:+50686154830" className="hover:text-[#E8541A] transition-colors">
-                  +506 8615-4830
+                <a href="tel:+50686154823" className="hover:text-[#E8541A] transition-colors">
+                  +506 8615-4823
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
@@ -93,7 +93,7 @@ export default function Footer() {
                   <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <FacebookIcon />
                   </div>
-                  Clinica Auditiva Audivia
+                  Clínica Auditiva Audivia
                 </a>
               </li>
               <li>

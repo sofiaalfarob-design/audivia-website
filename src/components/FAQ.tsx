@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const tabs = [
@@ -103,18 +103,19 @@ export default function FAQ() {
       <div
         className="hidden md:block absolute pointer-events-none select-none opacity-30"
         style={{
+          '--float-dur': '8s',
           width: 'min(348px, 25.6vw)',
           aspectRatio: '348 / 376',
           right: 0,
           top: 'max(-188px, -13.84vw)',
-        }}
+        } as React.CSSProperties}
       >
         <img src="/bg-faq-right.svg" alt="" className="w-full h-full object-contain" />
       </div>
       {/* Gráfico izquierdo – sangra hacia Footer, entre dos secciones */}
       <div
         className="hidden md:flex absolute items-center justify-center pointer-events-none select-none opacity-30"
-        style={{ top: '80.66%', right: '88.23%', left: '-1.69%', aspectRatio: '183 / 264.007', containerType: 'size' }}
+        style={{ '--float-dur': '10s', top: '80.66%', right: '88.23%', left: '-1.69%', aspectRatio: '183 / 264.007', containerType: 'size' } as React.CSSProperties}
       >
         <div className="-rotate-90 flex-none" style={{ height: '100cqw', width: '100cqh' }}>
           <img src="/bg-faq-left.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
@@ -134,12 +135,12 @@ export default function FAQ() {
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="faq-tabs flex overflow-x-auto gap-2 mb-10 pb-1 -mx-4 px-4 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => handleTabChange(tab)}
-              className={`px-4 py-2.5 rounded-full text-sm font-semibold border-2 transition-all duration-300 ${
+              className={`shrink-0 whitespace-nowrap px-3 py-2 rounded-full text-xs font-semibold border-2 transition-all duration-300 ${
                 activeTab === tab
                   ? 'bg-[#1B3A6B] border-[#1B3A6B] text-white'
                   : 'border-[#1B3A6B] text-[#1B3A6B] hover:bg-[#1B3A6B] hover:text-white'
@@ -187,10 +188,10 @@ export default function FAQ() {
         <div className="text-center mt-12">
           <p className="text-gray-500 mb-5">¿Tienes más preguntas? Estamos aquí para ayudarte</p>
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20servicios%20de%20Audivia.%20%C2%BFMe%20pueden%20ayudar%3F"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-orange inline-block text-white px-8 py-4 rounded-full font-semibold"
+            className="btn-orange block sm:inline-block w-full sm:w-auto text-white px-8 py-4 rounded-full font-semibold text-center"
           >
             Contáctanos ahora
           </a>

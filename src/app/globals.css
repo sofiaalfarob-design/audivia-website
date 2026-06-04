@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -91,6 +92,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 .step-number { animation: pulse-ring 2.5s ease-out infinite; }
 
+/* ── FAQ tabs mobile scroll ── */
+.faq-tabs::-webkit-scrollbar { display: none; }
+.faq-tabs { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* ── FAQ accordion ── */
 .faq-body {
   max-height: 0;
@@ -99,6 +104,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .faq-body.open { max-height: 600px; }
 
+
+/* ── Background graphics animation ── */
+@keyframes bg-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-22px); }
+}
+
+.animate-bg-float {
+  animation: bg-float var(--float-dur, 9s) ease-in-out infinite;
+  will-change: transform;
+}
 
 /* ── Hero subtle bg ── */
 .hero-bg {

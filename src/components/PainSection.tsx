@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -17,7 +18,7 @@ export default function PainSection() {
       {/* Gráfico de fondo – lado izquierdo, rotado 90°, igual que Figma */}
       <div
         className="hidden md:flex absolute items-center justify-center pointer-events-none select-none opacity-30"
-        style={{ top: '-64.92%', right: '86.26%', left: '-0.29%', aspectRatio: '190.703 / 1157', containerType: 'size' }}
+        style={{ '--float-dur': '11s', top: 'calc(-64.92% - 230px)', right: '86.26%', left: '-0.29%', aspectRatio: '190.703 / 1157', containerType: 'size', transform: 'scale(0.9)', transformOrigin: 'top left' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
           <img src="/bg-pain.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
@@ -83,10 +84,10 @@ export default function PainSection() {
             En Audivia, te devolvemos la claridad. Recuperar tu audición en Ciudad Quesada es el primer paso hacia una vida plena, segura y conectada.
           </p>
           <a
-            href="https://wa.me/50686154830"
+            href="https://wa.me/50686154823?text=Hola%20Karol%2C%20tengo%20algunas%20dudas%20sobre%20los%20servicios%20de%20Audivia%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n."
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-orange inline-flex items-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
+            className="btn-orange w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
           >
             <PhoneIcon />
             Agendar mi Evaluación Auditiva
