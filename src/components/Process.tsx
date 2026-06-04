@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const steps = [
@@ -30,10 +29,10 @@ export default function Process() {
 
   return (
     <section id="proceso" className="relative py-20 md:py-28 bg-white">
-      {/* Gráfico de fondo – esquina superior derecha, sangra hacia Services, igual que Figma */}
+      {/* Gráfico de fondo – esquina superior derecha */}
       <div
         className="hidden md:flex absolute items-center justify-center pointer-events-none select-none opacity-30"
-        style={{ '--float-dur': '13s', top: '-33%', right: '0', left: '79.69%', aspectRatio: '276 / 398.174', containerType: 'size' } as React.CSSProperties}
+        style={{ top: '-33%', right: '0', left: '79.69%', aspectRatio: '276 / 398.174', containerType: 'size' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
           <img src="/bg-services.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />

@@ -88,7 +88,7 @@ export default function Services() {
                 rel="noopener noreferrer"
                 className="mt-auto border-2 border-[#1B3A6B] text-[#1B3A6B] text-sm font-semibold py-2.5 rounded-full text-center hover:bg-[#1B3A6B] hover:text-white transition-all duration-300"
               >
-                Consultar por WhatsApp
+                Consulta por el servicio
               </a>
             </div>
           ))}

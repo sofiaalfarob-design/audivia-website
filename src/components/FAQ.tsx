@@ -106,7 +106,7 @@ export default function FAQ() {
           '--float-dur': '8s',
           width: 'min(348px, 25.6vw)',
           aspectRatio: '348 / 376',
-          right: 0,
+          right: '-80px',
           top: 'max(-188px, -13.84vw)',
         } as React.CSSProperties}
       >
