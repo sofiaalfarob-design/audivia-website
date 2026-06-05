@@ -72,7 +72,7 @@ export default function Services() {
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-[#E8541A] flex items-center justify-center mb-5 overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${service.icon}?v=2`} alt={service.title} width={32} height={32} className="object-contain" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${service.icon}?v=2`} alt={service.title} width={32} height={32} className="object-contain" />
               </div>
 
               <h3 className="text-[#1B3A6B] font-bold text-lg mb-3">{service.title}</h3>

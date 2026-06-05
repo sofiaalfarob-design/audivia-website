@@ -35,7 +35,7 @@ export default function Process() {
         style={{ top: '-33%', right: '0', left: '79.69%', aspectRatio: '276 / 398.174', containerType: 'size' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
-          <img src="/bg-services.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-services.svg`} alt="" className="absolute block inset-0 max-w-none w-full h-full" />
         </div>
       </div>
 

@@ -20,7 +20,7 @@ export default function Partners() {
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={i}
-                src={p.src}
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${p.src}`}
                 alt={p.alt}
                 style={{ height: p.height, width: 'auto', mixBlendMode: 'multiply' }}
               />

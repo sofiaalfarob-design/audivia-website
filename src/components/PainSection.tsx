@@ -21,7 +21,7 @@ export default function PainSection() {
         style={{ '--float-dur': '11s', top: 'calc(-64.92% - 230px)', right: '86.26%', left: '-0.29%', aspectRatio: '190.703 / 1157', containerType: 'size', transform: 'scale(0.9)', transformOrigin: 'top left' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
-          <img src="/bg-pain.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-pain.svg`} alt="" className="absolute block inset-0 max-w-none w-full h-full" />
         </div>
       </div>
 

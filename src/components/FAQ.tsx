@@ -110,7 +110,7 @@ export default function FAQ() {
           top: 'max(-188px, -13.84vw)',
         } as React.CSSProperties}
       >
-        <img src="/bg-faq-right.svg" alt="" className="w-full h-full object-contain" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-right.svg`} alt="" className="w-full h-full object-contain" />
       </div>
       {/* Gráfico izquierdo – sangra hacia Footer, entre dos secciones */}
       <div
@@ -118,7 +118,7 @@ export default function FAQ() {
         style={{ '--float-dur': '10s', top: '80.66%', right: '88.23%', left: '-1.69%', aspectRatio: '183 / 264.007', containerType: 'size' } as React.CSSProperties}
       >
         <div className="-rotate-90 flex-none" style={{ height: '100cqw', width: '100cqh' }}>
-          <img src="/bg-faq-left.svg" alt="" className="absolute block inset-0 max-w-none w-full h-full" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-left.svg`} alt="" className="absolute block inset-0 max-w-none w-full h-full" />
         </div>
       </div>
 

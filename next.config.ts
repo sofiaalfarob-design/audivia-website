@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
   basePath: '/audivia-website',
   assetPrefix: '/audivia-website',
   images: {
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
   },
 };
 
