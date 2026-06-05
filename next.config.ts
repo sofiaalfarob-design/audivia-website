@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: '/audivia-website',
+  assetPrefix: '/audivia-website',
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
