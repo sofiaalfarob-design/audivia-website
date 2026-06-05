@@ -14,7 +14,6 @@ export default function Partners() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''} text-center`}>
-          <h3 className="text-[#1B3A6B] font-bold text-xl mb-12">Partners de Audivia</h3>
           <div className="flex flex-wrap justify-center items-center gap-16 md:gap-28">
             {partners.map((p, i) => (
               // eslint-disable-next-line @next/next/no-img-element

@@ -74,7 +74,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <EmailIcon />
-                <span>info@audivia.cr</span>
+                <span>audiologiakarolvega@gmail.com</span>
               </li>
             </ul>
           </div>
