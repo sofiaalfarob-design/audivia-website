@@ -51,7 +51,6 @@ export default function About() {
             rel="noopener noreferrer"
             className="btn-orange w-full sm:w-auto flex sm:inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-full font-semibold text-sm"
           >
-            <WhatsAppIcon />
             Visita nuestra clínica
           </a>
         </div>
