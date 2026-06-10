@@ -15,6 +15,7 @@ const sora = Sora({
 });
 
 const SITE_URL = "https://audiviacr.com";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -51,8 +52,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/icono-audivia.svg",
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    icon: `${BASE_PATH}/icono-audivia.svg`,
+    apple: [{ url: `${BASE_PATH}/apple-touch-icon.png`, sizes: "180x180", type: "image/png" }],
   },
 };
 

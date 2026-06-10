@@ -17,7 +17,7 @@ export default function NotFound() {
           style={{ right: '-80px', top: '4%' }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/bg-404-right.svg" alt="" width={400} height={433} style={{ display: 'block' }} />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-404-right.svg`} alt="" width={400} height={433} style={{ display: 'block' }} />
         </div>
 
         {/* Gráfico inferior izquierda – mismo shape rotado -90°
@@ -29,7 +29,7 @@ export default function NotFound() {
         >
           <div style={{ transform: 'rotate(-90deg)', flexShrink: 0, width: '400px', height: '433px' }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bg-404-left.svg" alt="" width={400} height={433} style={{ display: 'block', width: '400px', height: '433px' }} />
+            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-404-left.svg`} alt="" width={400} height={433} style={{ display: 'block', width: '400px', height: '433px' }} />
           </div>
         </div>
 
