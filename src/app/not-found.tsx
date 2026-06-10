@@ -37,7 +37,7 @@ export default function NotFound() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center py-24">
 
           {/* Label */}
-          <p className="text-[#E8541A] text-xs font-semibold uppercase tracking-widest mb-4">
+          <p className="text-orange text-xs font-semibold uppercase tracking-widest mb-4">
             Pagina no encontrada
           </p>
 

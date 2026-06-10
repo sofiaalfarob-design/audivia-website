@@ -7,7 +7,7 @@ export default function Hero() {
   const { ref: rightRef, isVisible: rightVisible } = useScrollAnimation(0.05);
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden pt-20" style={{ background: 'linear-gradient(224.05deg, #FAFBFD 17.28%, #EFF1F6 81.03%)' }}>
+    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden pt-20 hero-bg">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Left */}
@@ -15,12 +15,12 @@ export default function Hero() {
           ref={leftRef}
           className={`fade-left ${leftVisible ? 'visible' : ''}`}
         >
-          <p className="text-[#E8541A] text-xs font-semibold uppercase tracking-widest mb-5">
+          <p className="text-orange text-xs font-semibold uppercase tracking-widest mb-5">
             Clínica de Audiología en Ciudad Quesada&nbsp;|&nbsp;Audivia – Karol Vega
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-[#1B3A6B] leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold text-navy leading-tight mb-6">
             Recupera tu audición<br />con la audióloga<br />
-            <span className="text-[#1B3A6B]">Karol Vega</span>
+            <span className="text-navy">Karol Vega</span>
           </h1>
           <p className="text-gray-500 text-base md:text-lg mb-3 leading-relaxed">
             Vuelve a ser parte de cada conversación con evaluaciones profesionales, limpieza de oídos y tecnología auditiva de vanguardia en San Carlos.
@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <div className="relative">
             {/* Orange circle */}
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[460px] lg:h-[460px] bg-[#E8541A] rounded-full overflow-hidden">
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] lg:w-[460px] lg:h-[460px] bg-orange rounded-full overflow-hidden">
               <Image
                 src="/image-hero.png"
                 alt="Dra. Karol Vega - Audióloga"
@@ -68,7 +68,7 @@ export default function Hero() {
 
             {/* Experience badge */}
             <div className="badge-float absolute bottom-8 -right-4 sm:right-0 lg:-right-6 bg-white rounded-2xl shadow-xl px-5 py-4 text-center border border-gray-100">
-              <p className="text-2xl lg:text-3xl font-extrabold text-[#1B3A6B]">+ 5 años</p>
+              <p className="text-2xl lg:text-3xl font-extrabold text-navy">+ 5 años</p>
               <p className="text-gray-500 text-sm font-medium">de experiencia</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function Hero() {
 
 function PhoneIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     </svg>
   );

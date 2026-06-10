@@ -110,7 +110,7 @@ export default function FAQ() {
           top: 'max(-188px, -13.84vw)',
         } as React.CSSProperties}
       >
-        <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-right.svg`} alt="" className="w-full h-full object-contain" />
+        <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-right.svg`} alt="" loading="lazy" className="w-full h-full object-contain" />
       </div>
       {/* Gráfico izquierdo – sangra hacia Footer, entre dos secciones */}
       <div
@@ -118,7 +118,7 @@ export default function FAQ() {
         style={{ '--float-dur': '10s', top: '80.66%', right: '88.23%', left: '-1.69%', aspectRatio: '183 / 264.007', containerType: 'size' } as React.CSSProperties}
       >
         <div className="-rotate-90 flex-none" style={{ height: '100cqw', width: '100cqh' }}>
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-left.svg`} alt="" className="absolute block inset-0 max-w-none w-full h-full" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-faq-left.svg`} alt="" loading="lazy" className="absolute block inset-0 max-w-none w-full h-full" />
         </div>
       </div>
 
@@ -128,7 +128,7 @@ export default function FAQ() {
           ref={headerRef}
           className={`fade-up ${headerVisible ? 'visible' : ''} text-center mb-10`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1B3A6B] mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy mb-3">
             Claridad ante tus dudas
           </h2>
           <p className="text-gray-500 text-lg">Resolvemos las preguntas más frecuentes</p>
@@ -140,10 +140,10 @@ export default function FAQ() {
             <button
               key={tab}
               onClick={() => handleTabChange(tab)}
-              className={`shrink-0 whitespace-nowrap px-3 py-2 rounded-full text-xs font-semibold border-2 transition-all duration-300 ${
+              className={`shrink-0 whitespace-nowrap px-4 py-3 rounded-full text-xs font-semibold border-2 transition-all duration-300 ${
                 activeTab === tab
-                  ? 'bg-[#1B3A6B] border-[#1B3A6B] text-white'
-                  : 'border-[#1B3A6B] text-[#1B3A6B] hover:bg-[#1B3A6B] hover:text-white'
+                  ? 'bg-navy border-navy text-white'
+                  : 'border-navy text-navy hover:bg-navy hover:text-white'
               }`}
             >
               {tab}
@@ -156,28 +156,35 @@ export default function FAQ() {
           {items.map((item, i) => (
             <div
               key={i}
-              className="bg-[#EFF5FA] rounded-2xl overflow-hidden border border-transparent hover:border-[#E8541A] transition-colors duration-200"
+              className="bg-light-bg rounded-2xl overflow-hidden border border-transparent hover:border-orange transition-colors duration-200"
             >
               <button
+                id={`faq-btn-${i}`}
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-panel-${i}`}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
               >
-                <span className="text-[#1B3A6B] font-semibold text-sm md:text-base pr-4">
+                <span className="text-navy font-semibold text-sm md:text-base pr-4">
                   {item.q}
                 </span>
                 <span
-                  className={`flex-shrink-0 text-[#E8541A] transition-transform duration-300 ${
+                  aria-hidden="true"
+                  className={`flex-shrink-0 text-orange transition-transform duration-300 ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                 >
                   <ChevronIcon />
                 </span>
               </button>
-              <div className={`faq-body ${openIndex === i ? 'open' : ''}`}>
-                <div className="px-6 pb-5 mx-6">
-                  <div className="border-l-4 border-[#E8541A] pl-4">
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.a}</p>
-                  </div>
+              <div
+                id={`faq-panel-${i}`}
+                role="region"
+                aria-labelledby={`faq-btn-${i}`}
+                className={`faq-body ${openIndex === i ? 'open' : ''}`}
+              >
+                <div className="px-6 pb-5">
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.a}</p>
                 </div>
               </div>
             </div>
@@ -203,7 +210,7 @@ export default function FAQ() {
 
 function ChevronIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="6 9 12 15 18 9"/>
     </svg>
   );

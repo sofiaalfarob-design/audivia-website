@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
-:root {
-  --navy: #1B3A6B;
-  --orange: #E8541A;
-  --light-bg: #EFF5FA;
-  --footer-bg: #102045;
+@theme {
+  --color-navy: #1B3A6B;
+  --color-orange: #E8541A;
+  --color-orange-hover: #C54716;
+  --color-light-bg: #EFF5FA;
+  --color-footer-bg: #102045;
 }
 
 html {
@@ -14,7 +15,7 @@ html {
 
 body {
   font-family: var(--font-sora), sans-serif;
-  color: #1B3A6B;
+  color: var(--color-navy);
   background: #ffffff;
   overflow-x: hidden;
 }
@@ -66,11 +67,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Orange button ── */
 .btn-orange {
-  background: #E8541A;
+  background: var(--color-orange);
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-orange:hover {
-  background: #C54716;
+  background: var(--color-orange-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(232, 84, 26, 0.22);
 }
@@ -78,12 +79,12 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Navy outline button ── */
 .btn-navy {
   background: transparent;
-  border: 2px solid #1B3A6B;
-  color: #1B3A6B;
+  border: 2px solid var(--color-navy);
+  color: var(--color-navy);
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-navy:hover {
-  background: #1B3A6B;
+  background: var(--color-navy);
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(27, 58, 107, 0.22);
@@ -98,13 +99,24 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 24px 48px rgba(27, 58, 107, 0.13);
 }
 
-/* ── Step pulse ── */
+/* ── Step pulse (GPU-compositable: transform + opacity only) ── */
 @keyframes pulse-ring {
-  0%   { box-shadow: 0 0 0 0 rgba(232, 84, 26, 0.45); }
-  70%  { box-shadow: 0 0 0 14px rgba(232, 84, 26, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(232, 84, 26, 0); }
+  0%   { transform: scale(1);    opacity: 0.8; }
+  100% { transform: scale(1.75); opacity: 0;   }
 }
-.step-number { animation: pulse-ring 2.5s ease-out infinite; }
+.step-number {
+  position: relative;
+}
+.step-number::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--color-orange);
+  animation: pulse-ring 2.5s ease-out infinite;
+  animation-delay: var(--step-delay, 0s);
+  pointer-events: none;
+}
 
 /* ── FAQ tabs mobile scroll ── */
 .faq-tabs::-webkit-scrollbar { display: none; }
@@ -117,7 +129,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .faq-body.open { max-height: 600px; }
-
 
 /* ── Background graphics animation ── */
 @keyframes bg-float {
@@ -133,4 +144,32 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Hero subtle bg ── */
 .hero-bg {
   background: linear-gradient(224.05deg, #FAFBFD 17.28%, #EFF1F6 81.03%);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable smooth scrolling */
+  html { scroll-behavior: auto; }
+
+  /* Scroll reveals: show content immediately, no movement */
+  .fade-up,
+  .fade-left,
+  .fade-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Decorative infinite animations: stop */
+  .badge-float,
+  .animate-bg-float { animation: none; }
+  .step-number::before { animation: none; }
+
+  /* Hover lifts: remove movement, keep color feedback */
+  .btn-orange:hover { transform: none; box-shadow: none; }
+  .btn-navy:hover   { transform: none; box-shadow: none; }
+  .service-card:hover { transform: none; box-shadow: none; }
+
+  /* FAQ accordion: instant open/close instead of slow slide */
+  .faq-body { transition: none; }
 }

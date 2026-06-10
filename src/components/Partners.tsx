@@ -1,10 +1,11 @@
 'use client';
+import Image from 'next/image';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const partners = [
-  { src: '/audinsa-logo-parner.png',  alt: 'Audinsa - Clínica Auditiva', height: 100 },
-  { src: '/nuear-logo-parner.png',    alt: 'NuEar',                      height: 58  },
-  { src: '/audibel-logo-parner.png',  alt: 'Audibel',                    height: 100 },
+  { src: '/audinsa-logo-parner.png', alt: 'Audinsa - Clínica Auditiva', height: 100, w: 1600, h: 946 },
+  { src: '/nuear-logo-parner.png',   alt: 'NuEar',                      height: 58,  w: 360,  h: 140 },
+  { src: '/audibel-logo-parner.png', alt: 'Audibel',                    height: 100, w: 588,  h: 318 },
 ];
 
 export default function Partners() {
@@ -16,11 +17,12 @@ export default function Partners() {
         <div ref={ref} className={`fade-up ${isVisible ? 'visible' : ''} text-center`}>
           <div className="flex flex-wrap justify-center items-center gap-16 md:gap-28">
             {partners.map((p, i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 key={i}
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${p.src}`}
+                src={p.src}
                 alt={p.alt}
+                width={p.w}
+                height={p.h}
                 style={{ height: p.height, width: 'auto', mixBlendMode: 'multiply' }}
               />
             ))}

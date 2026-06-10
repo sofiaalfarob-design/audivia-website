@@ -9,7 +9,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contacto" style={{ background: '#102045' }} className="text-white">
+    <footer id="contacto" className="bg-footer-bg text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -42,7 +42,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-[#E8541A] transition-colors duration-200"
+                    className="text-gray-400 text-sm hover:text-orange transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -61,20 +61,22 @@ export default function Footer() {
                   href="https://maps.google.com/?q=Frente+al+Hospital+San+Carlos+Ciudad+Quesada"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#E8541A] transition-colors"
+                  className="hover:text-orange transition-colors"
                 >
                   Frente al Hospital San Carlos,<br />Edificio Amore, Consultorio 3,<br />Ciudad Quesada
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <PhoneIcon />
-                <a href="tel:+50686154823" className="hover:text-[#E8541A] transition-colors">
+                <a href="tel:+50686154823" className="hover:text-orange transition-colors">
                   +506 8615-4823
                 </a>
               </li>
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <EmailIcon />
-                <span>audiologiakarolvega@gmail.com</span>
+                <a href="mailto:audiologiakarolvega@gmail.com" className="hover:text-orange transition-colors">
+                  audiologiakarolvega@gmail.com
+                </a>
               </li>
             </ul>
           </div>
@@ -88,7 +90,7 @@ export default function Footer() {
                   href="https://www.facebook.com/clinicaauditivaaudivia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#E8541A] transition-colors"
+                  className="flex items-center gap-3 text-gray-400 text-sm hover:text-orange transition-colors"
                 >
                   <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <FacebookIcon />
@@ -101,7 +103,7 @@ export default function Footer() {
                   href="https://www.instagram.com/audiviacr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#E8541A] transition-colors"
+                  className="flex items-center gap-3 text-gray-400 text-sm hover:text-orange transition-colors"
                 >
                   <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                     <InstagramIcon />
@@ -128,7 +130,7 @@ export default function Footer() {
 
 function LocationIcon() {
   return (
-    <svg className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" className="flex-shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
       <circle cx="12" cy="10" r="3"/>
     </svg>
@@ -136,14 +138,14 @@ function LocationIcon() {
 }
 function PhoneIcon() {
   return (
-    <svg className="flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" className="flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
     </svg>
   );
 }
 function EmailIcon() {
   return (
-    <svg className="flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" className="flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
       <polyline points="22,6 12,13 2,6"/>
     </svg>
@@ -151,14 +153,14 @@ function EmailIcon() {
 }
 function FacebookIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
     </svg>
   );
 }
 function InstagramIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
       <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
