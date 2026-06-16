@@ -15,7 +15,7 @@ const sora = Sora({
 });
 
 const SITE_URL = "https://audiviacr.com";
-const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const BASE_PATH = "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

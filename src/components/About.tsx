@@ -16,7 +16,7 @@ export default function About() {
         style={{ '--float-dur': '9s', top: '-24.52%', right: '80.06%', left: '-0.88%', aspectRatio: '283 / 674.805', containerType: 'size' } as React.CSSProperties}
       >
         <div className="flex-none rotate-90" style={{ height: '100cqw', width: '100cqh' }}>
-          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/bg-about.svg`} alt="" loading="lazy" className="absolute block inset-0 max-w-none w-full h-full" />
+          <img src="/bg-about.svg" alt="" loading="lazy" className="absolute block inset-0 max-w-none w-full h-full" />
         </div>
       </div>
 
