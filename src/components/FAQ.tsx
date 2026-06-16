@@ -135,12 +135,12 @@ export default function FAQ() {
         </div>
 
         {/* Tabs */}
-        <div className="faq-tabs flex overflow-x-auto gap-2 mb-10 pb-1 -mx-4 px-4 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
+        <div className="faq-tabs flex overflow-x-auto gap-1.5 mb-10 pb-1 -mx-4 px-4 sm:justify-center sm:mx-0 sm:px-0 sm:pb-0">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => handleTabChange(tab)}
-              className={`shrink-0 whitespace-nowrap px-4 py-3 rounded-full text-xs font-semibold border-2 transition-all duration-300 ${
+              className={`shrink-0 whitespace-nowrap px-3 py-3 rounded-full text-xs font-semibold border-2 transition-all duration-300 ${
                 activeTab === tab
                   ? 'bg-navy border-navy text-white'
                   : 'border-navy text-navy hover:bg-navy hover:text-white'
