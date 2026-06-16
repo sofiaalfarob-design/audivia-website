@@ -298,6 +298,10 @@ export default function RootLayout({
       className={`${poppins.variable} ${sora.variable} h-full antialiased`}
     >
       <head>
+        {/* Security meta tags — compensates for GitHub Pages not supporting HTTP headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

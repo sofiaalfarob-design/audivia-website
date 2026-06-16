@@ -82,6 +82,8 @@ export default function About() {
                   src="https://maps.google.com/maps?q=Frente+Emergencias+Hospital+San+Carlos+Ciudad+Quesada+Costa+Rica&output=embed&z=17&hl=es"
                   className="w-full h-full border-0 pointer-events-none"
                   title="Ubicación Clínica Audivia"
+                  sandbox="allow-scripts allow-same-origin"
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               )}
             </div>
