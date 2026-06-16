@@ -78,14 +78,14 @@ export default function Services() {
               />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-orange text-xs font-semibold uppercase tracking-widest mb-2">
+              <p className="text-[#F4884E] text-xs font-semibold uppercase tracking-widest mb-2">
                 Servicio principal
               </p>
               <h3 className="text-white font-bold text-xl mb-2">{featured.title}</h3>
               <p className="text-gray-300 text-sm leading-relaxed">{featured.description}</p>
             </div>
             <div className="flex flex-col sm:items-end gap-3 flex-shrink-0">
-              <p className="text-orange text-sm font-semibold">✓ {featured.benefit}</p>
+              <p className="text-[#F4884E] text-sm font-semibold">✓ {featured.benefit}</p>
               <a
                 href={featured.link}
                 target="_blank"

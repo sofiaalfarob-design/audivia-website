@@ -49,7 +49,7 @@ export default function PainSection() {
 
             {/* Badge "Audífonos con 2 años de garantía" */}
             <div className="absolute bottom-8 -right-2 sm:-right-6 bg-white border-2 border-orange rounded-xl shadow-lg px-4 py-3 max-w-[180px]">
-              <p className="text-navy font-bold text-sm leading-snug">Audífonos con 2 años de garantía</p>
+              <p className="text-navy font-bold text-sm leading-snug text-center">Audífonos con 2 años de garantía</p>
             </div>
           </div>
         </div>
